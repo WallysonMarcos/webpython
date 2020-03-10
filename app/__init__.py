@@ -8,6 +8,10 @@ app.config['SQLALCHEMY_DATABASE_URI'] = 'mysql+pymysql://suporte:$uportE99@local
 app.config['SQLALCHEMY_ECHO'] = True
 app.config['SQLALCHEMY_TRACK_MODIFICATIONS'] = False
 
+from app.models.tables import Usuario
+from app.models.tables import Atividade
+from app.controller import atividades
+
 @app.route('/home')
 def home():
     title = "Lista de Atividades"

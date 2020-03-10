@@ -1,0 +1,37 @@
+{% extends "base.html" %}
+{% block conteudo %}
+<div class="container">
+    <h2 class="pt-3 pb-4">Minhas Atividades complementares</h2>
+    {% if not atividades %}
+        <div class="alert alert-warning">Não fo encontrado nenhuma atividade!</div>
+    {% else %}
+        <table class="table">
+            <tr>
+                <th>ID</th>
+                <th>Nome</th>
+                <th>Tipo</th>
+                <th>ID</th>
+                <th>Nome</th>
+                <th>Tipo</th>
+                <th>Data</th>
+                <th>Carga Horaria</th>
+                <th></th>
+                <th></th>
+                <th></th>
+            </tr>
+            {% fro a in atividades%}
+            <tr>
+                <td>{{ a.id }}</td>
+                <td>{{ a.nome }}</td>
+                <td>{{ a.tipo }}</td>
+                <td>{{ a.data }}</td>
+                <td>{{ a.carga_horaria }}</td>
+                <td><a href="/atividades/deletar/{{ a.id }}" class="btn btn-danger">Deletar</a></td>
+                <td><a href="/atividades/alterar/{{ a.id }}" class="btn btn-warning">Alterar</a></td>
+                <td><a href="/atividades/{{ a.id }}" class="btn btn-primary">Visualizar</a></td>
+            </tr>
+            {% endfor %}
+         </table>
+    {% endif %}
+</div>
+{% endblock %}
