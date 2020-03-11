@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+{% block conteudo %}
+<div class="container">
+    <h2 class="pt-3 pb-4">Cadastrar nova atividade complementar</h2>
+     <form action="atividades/novo" method="post" enctype="multipart/form-data" class="from">
+         <div class="form-gruup">
+             <label for="nome">Nome:</label>
+             <input type="text" id="nome" name="nome" class="form-control">
+         </div>
+
+         <div class="form-gruup">
+             <label for="tipo">Tipo:</label>
+             <input type="text" id="tipo" name="tipo" class="form-control">
+         </div>
+
+         <div class="form-gruup">
+             <label for="data">Data:</label>
+             <input type="date" id="data" name="data" class="form-control">
+         </div>
+
+         <div class="form-gruup">
+             <label for="carga_horaria">Carga Horaria:</label>
+             <input type="number" id="carga_horaria" name="carga_horaria" class="form-control">
+         </div>
+
+         <div class="form-gruup">
+             <label for="arquivo">Anexo:</label>
+             <input type="file" id="arquivo" name="arquivo" class="form-control">
+         </div>
+
+         <input type="submit" class="btn btn-success" value="Cadastrar">
+     </form>
+</div>
+{% endblock %}

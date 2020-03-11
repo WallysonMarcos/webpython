@@ -14,7 +14,7 @@ class Usuario(db.Model):
         return '<Usuario: %s' % self.nome
 
 
-class Atividade(db.Model):
+class Atividades(db.Model):
     __tablename__ = 'atividades'
 
     id = db.Column(db.Integer, primary_key=True)
